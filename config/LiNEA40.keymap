@@ -1,5 +1,6 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 150
 
+#include <input/processors/runtime-input-processor.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
@@ -53,6 +54,7 @@
 };
 
 &trackball_listener {
+    input-processors = <&mouse_runtime_input_processor>;
     scroller {
         layers = <SCROLL>;
         input-processors =
